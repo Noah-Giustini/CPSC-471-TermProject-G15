@@ -4,7 +4,7 @@
 <form action="add.php" method="post">
    Name: <input type="text" name="name"><br>
    E-mail: <input type="text" name="email"><br>
-   <input type="submit" value="add">
+   <input type="submit" value="login">
 </form>
 <br>
 <a href="admin-main.php">Be an Admin</a>
