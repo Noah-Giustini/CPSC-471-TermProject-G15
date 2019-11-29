@@ -1,4 +1,5 @@
 <?php
+session_start();
 // vars from form
 $password = $_POST["Password"];
 $fname = $_POST["FName"];
