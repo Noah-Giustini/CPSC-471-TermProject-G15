@@ -1,7 +1,8 @@
 <?php
+include '../db_connection.php';
 session_start();
 // Create connection
-$con=mysqli_connect("localhost","root","","mydb");
+$con=OpenCon();
 
 // Check connection
 if (mysqli_connect_errno($con))
@@ -39,7 +40,7 @@ while($row = mysqli_fetch_array($result))
 echo "</table>";
 
 echo "<br>
-<a href=$prev_page>Back</a>
+<a href=patient-main.php>Back</a>
 <br>";
 
 

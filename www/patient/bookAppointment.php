@@ -6,5 +6,5 @@
    <input type="submit" value="Submit">
 </form>
 <br>
-<a href="viewPatientInfo.php">Back</a>
+<a href="patient-main.php">Back</a>
 <br>
