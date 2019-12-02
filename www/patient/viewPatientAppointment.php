@@ -39,7 +39,7 @@ while($row = mysqli_fetch_array($result))
 echo "</table>";
 
 echo "<br>
-<a href=$prev_page>Back</a>
+<a href=patient-main.php>Back</a>
 <br>";
 
 
