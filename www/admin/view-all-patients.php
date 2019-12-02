@@ -1,9 +1,8 @@
 <?php
-
+include '../db_connection.php';
 
 // Create connection
-$con=mysqli_connect("localhost","test","test","mydb");
-session_start();
+$con=OpenCon();
 // Check connection
 if (mysqli_connect_errno($con))
   {
@@ -13,7 +12,8 @@ if (mysqli_connect_errno($con))
   $UserID = $_SESSION['PatientID'];
   $prev_page = $_SESSION['Prev_Page'];
 
-  $result = mysqli_query($con, "SELECT * FROM patients");
+  $result = mysqli_query($con, "SELECT * FROM patients AS P, patient_is_in_ward AS PW, patient_is_in_room AS PR WHERE P.PATIENTS_USERID_pk = PR.PR_UserID_fk AND P.PATIENTS_USERID_pk = PW.PW_UserID_fk");
+
 
   echo "<table border= '1'>
   <tr>
@@ -22,6 +22,8 @@ if (mysqli_connect_errno($con))
 <th>First Name</th>
 <th>Last Name</th>
 <th>Health Care Number</th>
+<th>Ward ID</th>
+<th>Room Number</th>
 
 </tr>";
 
@@ -33,6 +35,8 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['FName'] . "</td>";
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['HealthCareNum'] . "</td>";
+  echo "<td>" . $row['PW_WardID_fk'] . "</td>";
+  echo "<td>" . $row['PR_Room#_fk'] . "</td";
   echo "</tr>";
   }
 echo "</table>";
@@ -66,6 +70,6 @@ mysqli_close($con);
 		</style>
 	</head>
 
-	<body bgcolor = #123456>
+	<body bgcolor = #FFFFFF>
 		<div align="center"></div>
 	</body>
