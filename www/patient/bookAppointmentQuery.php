@@ -1,4 +1,5 @@
 <?php
+include '../db_connection.php';
 // vars from form
 $date = $_POST["Date"];
 $time = $_POST["Time"];
@@ -10,7 +11,7 @@ $UserID = $_SESSION['PatientID'];
 
 
 // Create connection
-$con=mysqli_connect("localhost","root","","mydb");
+$con=OpenCon();
 
 // Check connection
 if (mysqli_connect_errno($con))

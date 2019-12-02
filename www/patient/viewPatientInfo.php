@@ -1,7 +1,8 @@
 <?php
+include '../db_connection.php';
 session_start();
 // Create connection
-$con=mysqli_connect("localhost","root","","mydb");
+$con=OpenCon();
 
 // Check connection
 if (mysqli_connect_errno($con))
