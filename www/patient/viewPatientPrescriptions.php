@@ -11,7 +11,6 @@ if (mysqli_connect_errno($con))
 }
 
 $UserID = $_SESSION['PatientID'];
-$prev_page = $_SESSION['Prev_Page'];
 
 
 if ($_GET["job"] == "update"){

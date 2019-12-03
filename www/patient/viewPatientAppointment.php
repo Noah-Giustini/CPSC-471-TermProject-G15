@@ -10,7 +10,6 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 $UserID = $_SESSION['PatientID'];
-$prev_page = $_SESSION['Prev_Page'];
 
 
 
