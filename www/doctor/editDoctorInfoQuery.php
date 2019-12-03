@@ -5,7 +5,7 @@ $password = $_POST["Password"];
 $fname = $_POST["FName"];
 $lname = $_POST["LName"];
 //user var
-// $UserID = $_SESSION['PatientID'];
+// $UserID = $_SESSION['UserId'];
 $UserID = 882229;
 
 

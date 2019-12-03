@@ -1,6 +1,7 @@
 <?php
 include '../db_connection.php';
 
+session_start();
 // Create connection
 $con=OpenCon();
 // Check connection
@@ -9,37 +10,19 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $prev_page = $_SESSION['Prev_Page'];
+$userID = $_POST['UserID'];
+$password = $_POST['Password'];
 
-  
+$sql = "SELECT * FROM staff AS S WHERE S.STAFF_UserID_pk = '$userID' AND S.Password = '$password' AND S.JobTitle = 'ADMIN'";
+$result = mysqli_query($con, $sql);
 
-//   $result = mysqli_query($con, "SELECT * FROM patients");
+if(mysqli_num_rows($result) == 1){
+	$_SESSION["UserID"] = $userID;
+	header("Location: admin-main.php");
 
-//   echo "<table border= '1'>
-//   <tr>
-//   <th>ID</th>
-// <th>Password</th>
-// <th>First Name</th>
-// <th>Last Name</th>
-// <th>Health Care Number</th>
-
-// </tr>";
-
-// while($row = mysqli_fetch_array($result))
-//   {
-//   echo "<tr>";
-//   echo "<td>" . $row['PATIENTS_USERID_pk'] . "</td>";
-//   echo "<td>" . $row['Password'] . "</td>";
-//   echo "<td>" . $row['FName'] . "</td>";
-//   echo "<td>" . $row['LName'] . "</td>";
-//   echo "<td>" . $row['HealthCareNum'] . "</td>";
-//   echo "</tr>";
-//   }
-// echo "</table>";
-
-// echo "<br>
-// <a href=$prev_page>Back</a>
-// <br>";
+}else{
+	header("Location: login.php");
+}
 
 
 mysqli_close($con);
