@@ -12,16 +12,6 @@ if (mysqli_connect_errno($con))
 $UserID = $_SESSION['PatientID'];
 $prev_page = $_SESSION['Prev_Page'];
 
-if ($_GET["job"] == "update"){
-
-  $ID = $_POST["ID"];
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-    
-  $result = mysqli_query($con,"update Users set name='".$name. "', email='". $email. "' where ID=". $ID);
-  
-  } 
-
 //query
 $result = mysqli_query($con,"SELECT * FROM PATIENTS AS P WHERE P.PATIENTS_UserID_pk=$UserID");
 
@@ -42,7 +32,6 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['FName'] . "</td>";
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['HealthCareNum'] . "</td>";
-  echo "<td><a href='update.php?ID= " . $row['ID'] . "'>Update</a></td>";
   
   echo "</tr>";
   }
