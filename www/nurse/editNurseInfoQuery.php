@@ -4,10 +4,8 @@ include '../db_connection.php';
 $password = $_POST["Password"];
 $fname = $_POST["FName"];
 $lname = $_POST["LName"];
-$hc = $_POST["HealthCareNum"];
 //user var
-$UserID = $_SESSION['PatientID'];
-
+$UserID = $_SESSION['UserID'];
 
 
 // Create connection
@@ -19,17 +17,17 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-  $sql = "UPDATE PATIENTS as P SET P.FName='$fname',P.LName='$lname',P.Password='$password',P.HealthCareNum='$hc' WHERE P.PATIENTS_USERID_pk = '$UserID'";
-  
+  $sql = "UPDATE STAFF SET Fname='$fname',LName='$lname',Password='$password' WHERE STAFF_UserID_pk = '$UserID';";
+  //TODO: TEST this
  
  if (!mysqli_query($con,$sql))
   {
   die('Error: ' . mysqli_error($con));
   }
   
-echo "1 record succsessfuly updated";
+echo "1 record successfuly updated";
 
 mysqli_close($con);
 
-echo '<br> <a href="viewPatientInfo.php">Back</a> <br>';
+echo '<br> <a href="viewNurseInfo.php">Back</a> <br>';
 ?>

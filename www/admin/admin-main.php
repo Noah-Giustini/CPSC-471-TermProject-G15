@@ -1,7 +1,7 @@
 <html>
 <body>
 <h1>Welcome, Admin</h1>
-<a href="index.php">View Patients</a><br>
+<a href="view-all-patients.php">View Patients</a><br>
 <a href="index.php">View Personal Information</a><br>
 <a href="index.php">Move Bed</a><br>
 <a href="index.php">Move Equipment</a><br>
