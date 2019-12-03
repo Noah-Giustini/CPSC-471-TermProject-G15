@@ -8,7 +8,7 @@ echo '<form action="addPrescriptionQuery.php"  method="post">
    MedicineID: <input type="text" name="MedicineID" required><br>
    Dosage: <input type="text" name="Dosage" required><br>
    Frequency: <input type="text" name= "Frequency" required><br>
-   IsRefillable<input type="checkbox" name IsRefillable>
+   IsRefillable<input type="checkbox" name = "IsRefillable" value = "1">
    <input type="submit" value="Add">
 </form>
 <br>
