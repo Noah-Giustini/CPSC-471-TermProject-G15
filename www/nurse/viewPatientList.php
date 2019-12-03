@@ -9,16 +9,18 @@ if (mysqli_connect_errno($con))
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$UserID = $_SESSION['PatientID'];
+//$UserID = $_SESSION['DoctorID'];
+$UserID = 882229;
 $prev_page = $_SESSION['Prev_Page'];
 
+
+
 //query
-$result = mysqli_query($con,"SELECT * FROM PATIENTS AS P WHERE P.PATIENTS_UserID_pk=$UserID");
+$result = mysqli_query($con,"SELECT * FROM PATIENTS");
 
 echo "<table border='1'>
 <tr>
 <th>ID</th>
-<th>Password</th>
 <th>First Name</th>
 <th>Last Name</th>
 <th>Health Care #</th>
@@ -28,19 +30,18 @@ while($row = mysqli_fetch_array($result))
   {
   echo "<tr>";
   echo "<td>" . $row['PATIENTS_USERID_pk'] . "</td>";
-  echo "<td>" . $row['Password'] . "</td>";
   echo "<td>" . $row['FName'] . "</td>";
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['HealthCareNum'] . "</td>";
-  
+  echo "<td><a href='editPatientInfo.php?ID= " . $row['PATIENTS_USERID_pk'] . "'>Edit Info</a></td>";
+  echo "<td><a href='viewPatientPrescriptions.php?ID= " . $row['PATIENTS_USERID_pk'] . "'>View Prescriptions</a></td>";
   echo "</tr>";
   }
 echo "</table>";
 
 echo "<br>
-<a href=patient-main.php>Back</a>
+<a href=nurse-main.php>Back</a>
 <br>";
-echo "<a href=editPatientInfo.php>Edit Info</a> <br>";
 
 
 
