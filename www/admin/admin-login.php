@@ -18,6 +18,7 @@ $result = mysqli_query($con, $sql);
 
 if(mysqli_num_rows($result) == 1){
 	$_SESSION["UserID"] = $userID;
+	$_SESSION['login'] = 'true';
 	header("Location: admin-main.php");
 
 }else{
