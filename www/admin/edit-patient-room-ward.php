@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['login'])){
+	header("Location: /index.php");
+}
 $PatientID  = $_GET["ID"];
 echo '<form action="edit-patient-roomWardQuery.php"  method="post">
 
