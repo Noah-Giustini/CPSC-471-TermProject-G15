@@ -19,6 +19,7 @@ $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result) == 1){
   $_SESSION["UserID"] = $userID;
   $_SESSION['PatientID'] = $userID;
+  $_SESSION['login'] = 'true';
 	header("Location: patient-main.php");
 
 }else{

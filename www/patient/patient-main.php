@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['login'])){
+	header("Location: /index.php");
+}
+?>
 <html>
 <body>
 <h1>Welcome, Patient</h1>

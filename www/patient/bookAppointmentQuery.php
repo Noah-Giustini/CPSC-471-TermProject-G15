@@ -1,6 +1,9 @@
 <?php
 include '../db_connection.php';
 session_start();
+if(!isset($_SESSION['login'])){
+	header("Location: /index.php");
+}
 // vars from form
 $date = $_POST["Date"];
 $time = $_POST["Time"];
