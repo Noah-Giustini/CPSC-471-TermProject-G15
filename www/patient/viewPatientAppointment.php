@@ -1,6 +1,9 @@
 <?php
 include '../db_connection.php';
 session_start();
+if(!isset($_SESSION['login'])){
+	header("Location: /index.php");
+}
 // Create connection
 $con=OpenCon();
 
@@ -10,7 +13,6 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 $UserID = $_SESSION['PatientID'];
-$prev_page = $_SESSION['Prev_Page'];
 
 
 

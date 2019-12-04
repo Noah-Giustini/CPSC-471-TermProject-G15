@@ -2,7 +2,7 @@
 include '../db_connection.php';
 session_start();
 if(!isset($_SESSION['login'])){
-	header("Location: /index.php");
+  header("Location: /index.php");
 }
 // Create connection
 $con=OpenCon();
@@ -21,7 +21,7 @@ $prev_page = $_SESSION["Prev_Page"];
 
 
 //query
-$result = mysqli_query($con,"SELECT M.MedicineName,P.Dosage,P.Frequency,P.IsRefillable 
+$result = mysqli_query($con,"SELECT P.MEDICINE_MedicineID,M.MedicineName,P.Dosage,P.Frequency,P.IsRefillable 
 FROM PRESCRIBED AS P, MEDICINE AS M WHERE P.PPRESC_UserID_fk=$PatientID AND M.MedicineID_pk=P.MEDICINE_MedicineID");
 
 echo "<table border='1'>
@@ -42,13 +42,16 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['Dosage'] . "</td>";
   echo "<td>" . $row['Frequency'] . "</td>";
   echo "<td>" . $row['IsRefillable'] . "</td>";
-  //ADD Actual file and call here
+  echo "<td><a href='deletePrescription.php?MedID= " . $row["MEDICINE_MedicineID"] . "&DocID=".$UserID."&PatientID=".$PatientID." '>Delete</a></td>";
   echo "</tr>";
   }
 echo "</table>";
 
 echo "<br>
-<a href=viewPatientList.php>Back</a>
+<a href='addPrescription.php?DocID=".$UserID."&PatientID=".$PatientID."'>Add Prescription</a>
+<br>";
+echo "<br>
+<a href=$prev_page>Back</a>
 <br>";
 
 mysqli_close($con);

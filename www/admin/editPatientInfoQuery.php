@@ -1,9 +1,5 @@
 <?php
 include '../db_connection.php';
-session_start();
-if(!isset($_SESSION['login'])){
-	header("Location: /index.php");
-}
 // vars from form
 $ID = $_POST["PatientID"];
 $fname = $_POST["FName"];

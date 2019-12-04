@@ -6,11 +6,8 @@ if(!isset($_SESSION['login'])){
 }
 // vars from form
 $ID = $_POST["PatientID"];
-$fname = $_POST["FName"];
-$lname = $_POST["LName"];
-$hc = $_POST["HealthCareNum"];
-
-
+$room = $_POST["Room-Number"];
+$ward = $_POST["WardID"];
 
 // Create connection
 $con=OpenCon();
@@ -20,7 +17,7 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-  $sql = "UPDATE PATIENTS as P SET P.FName='$fname',P.LName='$lname',P.HealthCareNum='$hc' WHERE P.PATIENTS_USERID_pk = '$ID'";
+  $sql = "UPDATE patient_is_in_ward AS PW, patient_is_in_room AS PR SET PW.PW_WardID_fk='$ward' SET PR.PR_RoomNum_fk='$room', WHERE PR.PR_UserID_fk = '$ID' AND PW.PW_UserID_fk = '$ID'";
   
  
  if (!mysqli_query($con,$sql))
@@ -32,5 +29,5 @@ echo "1 record succsessfuly updated";
 
 mysqli_close($con);
 
-echo '<br> <a href="viewPatientList.php">Back</a> <br>';
+echo '<br> <a href="assign-patient-room.php">Back</a> <br>';
 ?>

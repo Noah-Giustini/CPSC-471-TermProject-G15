@@ -9,13 +9,13 @@ if (mysqli_connect_errno($con))
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-//$UserID = $_SESSION['DoctorID'];
-$UserID = 882229;
+$UserID = $_SESSION['UserID'];
 $prev_page = $_SESSION['Prev_Page'];
 
 
 
 //query
+//fix this to include ward and room???
 $result = mysqli_query($con,"SELECT * FROM PATIENTS");
 
 echo "<table border='1'>

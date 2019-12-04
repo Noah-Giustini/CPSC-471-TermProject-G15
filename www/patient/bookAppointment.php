@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(!isset($_SESSION['login'])){
+	header("Location: /index.php");
+}
+?>
 <form action="bookAppointmentQuery.php" method="post">
    Date: <input type="date" name="Date" min="2020-01-01" required><br>
    Time: <input type="time" name="Time" min="06:00:00" max="18:00:00" step="1800" required><br>

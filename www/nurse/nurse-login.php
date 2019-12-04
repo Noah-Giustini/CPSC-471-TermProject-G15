@@ -13,13 +13,13 @@ if (mysqli_connect_errno($con))
 $userID = $_POST['UserID'];
 $password = $_POST['Password'];
 
-$sql = "SELECT * FROM staff AS S WHERE S.STAFF_UserID_pk = '$userID' AND S.Password = '$password' AND S.JobTitle = 'ADMIN'";
+$sql = "SELECT * FROM staff AS S WHERE S.STAFF_UserID_pk = '$userID' AND S.Password = '$password' AND S.JobTitle = 'NURSE'";
 $result = mysqli_query($con, $sql);
 
 if(mysqli_num_rows($result) == 1){
-	$_SESSION["UserID"] = $userID;
-	$_SESSION['login'] = 'true';
-	header("Location: admin-main.php");
+  $_SESSION["UserID"] = $userID;
+  $_SESSION['login'] = 'true';
+	header("Location: nurse-main.php");
 
 }else{
 	header("Location: login.php");

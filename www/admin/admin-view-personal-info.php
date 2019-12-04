@@ -2,7 +2,7 @@
 include '../db_connection.php';
 session_start();
 if(!isset($_SESSION['login'])){
-	header("Location: /index.php");
+  header("Location: /index.php");
 }
 // Create connection
 $con=OpenCon();
@@ -13,13 +13,12 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 $UserID = $_SESSION['UserID'];
-$prev_page = $_SESSION['Prev_Page'];
 
 
 
 //query
-$result = mysqli_query($con,"SELECT * FROM STAFF AS S, NURSE AS N
- WHERE S.STAFF_UserID_pk = $UserID AND N.NURSE_UserID_fk=S.STAFF_UserID_pk");
+$result = mysqli_query($con,"SELECT * FROM admin AS A, staff AS S 
+ WHERE S.STAFF_UserID_pk = $UserID AND A.ADMIN_UserID_fk=S.STAFF_UserID_pk; ");
 
 echo "<table border='1'>
 <tr>
@@ -28,7 +27,7 @@ echo "<table border='1'>
 <th>First Name</th>
 <th>Last Name</th>
 <th>Salary</th>
-<th>Ward ID</th>
+<th>Clearance Level</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -39,18 +38,15 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['FName'] . "</td>";
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['Salary'] . "</td>";
-  echo "<td>" . $row['NURSE_WardID_fk'] . "</td>";
+  echo "<td>" . $row['ClearanceLevel'] . "</td>";
+  
   echo "</tr>";
   }
 echo "</table>";
 
 echo "<br>
-<a href=nurse-main.php>Back</a>
+<a href=admin-main.php>Back</a>
 <br>";
-
-echo "<a href=editNurseInfo.php>Edit Info</a>";
-
-
 
 mysqli_close($con);
 ?>

@@ -1,5 +1,9 @@
 <?php
 include '../db_connection.php';
+session_start();
+if(!isset($_SESSION['login'])){
+	header("Location: /index.php");
+}
 // vars from form
 $date = $_POST["Date"];
 $time = $_POST["Time"];
@@ -19,7 +23,7 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   //test query to make sure there is not already an appt at that time with same doc
-  $testq = mysqli_query($con,"SELECT * FROM APPOINTMENT AS A WHERE A.TIME='$time' AND A.DAPT_UserID_fk = '$docUID'");
+  $testq = mysqli_query($con,"SELECT * FROM APPOINTMENT AS A WHERE A.TIME='$time' AND A.DAPT_UserID_fk = '$docUID' AND A.Date='$date'");
 //check to see if there was anything returned by query  
 if (mysqli_num_rows($testq) < 1){
   //if no try to insert
