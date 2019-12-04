@@ -14,7 +14,7 @@ if(!isset($_SESSION['login'])){
 <a href="move-bed.php">Move Bed</a><br>
 <a href="move-equipment.php">Move Equipment</a><br>
 <a href="assign-patient-room.php">Assign Patient Room or Ward</a><br>
-<a href="index.php">Add Patient</a><br>
+<a href="add-patient.php">Add Patient</a><br>
 <a href="index.php">Add Doctor</a><br>
 <a href="index.php">Add Nurse</a><br>
 <a href="index.php">Add Admin</a><br>
