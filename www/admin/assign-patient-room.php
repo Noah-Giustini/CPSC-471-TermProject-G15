@@ -36,7 +36,7 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['HealthCareNum'] . "</td>";
   echo "<td>" . $row['PW_WardID_fk'] . "</td>";
-  echo "<td>" . $row['PR_Room#_fk'] . "</td>";
+  echo "<td>" . $row['PR_RoomNum_fk'] . "</td>";
   echo "<td><a href='edit-patient-room-ward.php?ID= " . $row['PATIENTS_USERID_pk'] . "'>Assign Room</a></td>";
   echo "<td><a href='edit-patient-room-ward.php?ID= " . $row['PATIENTS_USERID_pk'] . "'>Assign Ward</a></td>";
   echo "</tr>";
