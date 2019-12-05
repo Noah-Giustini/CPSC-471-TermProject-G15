@@ -3,14 +3,23 @@
 	body{
 		text-align: center;
 		padding-bottom: 100px;
+		padding-top: 50px;
 	}
 	#footer {
-   position:fixed;
-   bottom:0;
-   width:100%;
-   height:60px;
-   background:#6cf;
-}
+	   position:fixed;
+	   bottom:0;
+	   width:100%;
+	   height:60px;
+	   background:#6cf;
+	}
+	header{
+		position: absolute;
+		top:0;
+		width: 100%;
+		height: 60px;
+		background: #6af;
+		padding-bottom: 20px;
+	}
 </style>
 
 <header>

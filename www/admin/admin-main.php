@@ -20,7 +20,14 @@ if(!isset($_SESSION['login'])){
 <a href="add-admin.php">Add Admin</a><br>
 <a href="viewDoctorList.php">View Doctors</a><br>
 <a href="viewNurseList.php">View Nurses</a><br>
+<<<<<<< HEAD
 <br>
 <a href='../logout.php'>Log out</a><br>
+=======
+
+>>>>>>> f1e478ed9839a1433bc5cd074b25f69627e9d7ac
 </body>
+
 </html>
+
+
