@@ -7,8 +7,8 @@ $PatientID  = $_GET["PatientID"];
 $DocID = $_GET["DocID"];
 
 echo '<form action="addPrescriptionQuery.php"  method="post">
-   DoctorID:<input type = "hidden" name = "DoctorID" value =' . $DocID. '><br>
-   PatientID: <input type = "hidden" name = "PatientID" value =' . $PatientID. '><br>
+   <input type = "hidden" name = "DoctorID" value =' . $DocID. '>
+   <input type = "hidden" name = "PatientID" value =' . $PatientID. '>
    MedicineID: <input type="text" name="MedicineID" required><br>
    Dosage: <input type="text" name="Dosage" required><br>
    Frequency: <input type="text" name= "Frequency" required><br>
