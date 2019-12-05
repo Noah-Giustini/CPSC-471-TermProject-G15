@@ -11,9 +11,8 @@ if(!isset($_SESSION['login'])){
    First Name: <input type="text" name="FName" ><br>
    Last Name: <input type="text" name="LName" ><br>
    Salary: <input type="text" name="Salary" ><br>
-   Specialist: <input type="checkbox" name="JobTitle" ><br>
-   <!-- THIS NEEDS MORE INFO -->
-   <!-- SQL for Doctor is  select * from staff as S, doctor as D, doctor_degrees AS Dd, doctor_is_in_ward as DW WHERE S.STAFF_UserID_pk = Dd.DOCDEG_UserID_fk AND S.STAFF_UserID_pk = DW.DW_UserID_fk AND S.STAFF_UserID_pk = D.DOCTOR_UserID_fk;-->
+   Is Specialist(0 for No, 1 for Yes): <input type="text" name="IsSpecialist" ><br>
+   Specialist: <input type="text" name="Specialist" ><br>
 
    <input type="submit" value="Submit">
 </form>

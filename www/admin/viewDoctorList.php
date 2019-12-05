@@ -14,27 +14,32 @@ if (mysqli_connect_errno($con))
 }
 
 
-
 //query
-$result = mysqli_query($con,"SELECT * FROM PATIENTS");
+$result = mysqli_query($con,"SELECT * FROM staff AS S, doctor AS D WHERE D.DOCTOR_UserID_fk = S.STAFF_UserID_pk;");
 
 echo "<table border='1'>
 <tr>
 <th>ID</th>
+<th>Password</th>
+<th>SSN</th>
 <th>First Name</th>
 <th>Last Name</th>
-<th>Health Care #</th>
+<th>Salary</th>
+<th>Specialty</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
   {
   echo "<tr>";
-  echo "<td>" . $row['PATIENTS_USERID_pk'] . "</td>";
+  echo "<td>" . $row['STAFF_UserID_pk'] . "</td>";
+  echo "<td>" . $row['Password'] . "</td>";
+  echo "<td>" . $row['SSN'] . "</td>";  
   echo "<td>" . $row['FName'] . "</td>";
   echo "<td>" . $row['LName'] . "</td>";
-  echo "<td>" . $row['HealthCareNum'] . "</td>";
-  echo "<td><a href='editPatientInfo.php?ID= " . $row['PATIENTS_USERID_pk'] . "'>Edit Info</a></td>";
-  echo "<td><a href='viewPatientPrescriptions.php?ID= " . $row['PATIENTS_USERID_pk'] . "'>View Prescriptions</a></td>";
+  echo "<td>" . $row['Salary'] . "</td>";
+  echo "<td>" . $row['Specialty'] . "</td>";
+  echo "<td><a href='view-Doc-Wards.php?ID= " . $row['STAFF_UserID_pk'] . "'>View Wards</a></td>";
+  echo "<td><a href='viewDocDegrees.php?ID= " . $row['STAFF_UserID_pk'] . "'>View Degrees</a></td>";
   echo "</tr>";
   }
 echo "</table>";
