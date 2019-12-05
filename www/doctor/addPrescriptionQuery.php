@@ -35,14 +35,14 @@ if (mysqli_connect_errno($con))
     }
   echo "Prescription Added succesfully";
     } 
+ else if (!mysqli_query($con,$sql))
+  {
+  die('Error: ' . mysqli_error($con));
+  }
     else {
         echo "You have already prescribed this medicine to this patient. Please delete the previous prescription before trying again";
     }
  
- if (!mysqli_query($con,$sql))
-  {
-  die('Error: ' . mysqli_error($con));
-  }
   
 
 mysqli_close($con);

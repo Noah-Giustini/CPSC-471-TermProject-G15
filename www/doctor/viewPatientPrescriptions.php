@@ -52,7 +52,7 @@ echo "<br>
 <a href='addPrescription.php?DocID=".$UserID."&PatientID=".$PatientID."'>Add Prescription</a>
 <br>";
 echo "<br>
-<a href=$prev_page>Back</a>
+<a href='viewPatientList.php'>Back</a>
 <br>";
 
 mysqli_close($con);

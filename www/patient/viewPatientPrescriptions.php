@@ -52,7 +52,6 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['Dosage'] . "</td>";
   echo "<td>" . $row['Frequency'] . "</td>";
   echo "<td>" . $row['IsRefillable'] . "</td>";
-  echo "<td><a href='update.php?ID= " . $row['ID'] . "'>Update</a></td>";
   
   echo "</tr>";
   }

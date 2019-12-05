@@ -43,14 +43,14 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['Salary'] . "</td>";
   echo "<td>" . $row['DW_WardID_fk'] . "</td>";
   
-  echo "<td><a href='update.php?ID= " . $row['ID'] . "'>Update</a></td>";
+  echo "<td><a href='editDoctorInfo.php'>Update</a></td>";
   
   echo "</tr>";
   }
 echo "</table>";
 
 echo "<br>
-<a href=$prev_page>Back</a>
+<a href='doctor-main.php'>Back</a>
 <br>";
 
 
