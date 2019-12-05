@@ -20,10 +20,8 @@ if(!isset($_SESSION['login'])){
 <a href="add-admin.php">Add Admin</a><br>
 <a href="viewDoctorList.php">View Doctors</a><br>
 <a href="viewNurseList.php">View Nurses</a><br>
-
 <br>
 <a href='../logout.php'>Log out</a><br>
-
 </body>
 
 </html>
