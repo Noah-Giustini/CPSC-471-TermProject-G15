@@ -11,8 +11,7 @@ $ssn = $_POST["SSN"];
 $FName = $_POST["FName"];
 $LName = $_POST["LName"];
 $salary = $_POST["Salary"];
-$isSpecialist = $_POST["IsSpecialist"];
-$specialist = $_POST["Specialist"];
+$clearance = $_POST["Clearance"];
 
 
 
@@ -29,13 +28,13 @@ if (mysqli_connect_errno($con))
 //check to see if there was anything returned by query  
 if (mysqli_num_rows($testq) < 1){
   //if no try to insert
-  $sql = "INSERT INTO staff VALUES ('$UserID','$password','$ssn', '$FName','$LName','$salary', 'DOCTOR');";
-  $sql2 = "INSERT INTO doctor VALUES ('$UserID', '$isSpecialist', '$specialist');";
+  $sql = "INSERT INTO staff VALUES ('$UserID','$password','$ssn', '$FName','$LName','$salary', 'ADMIN');";
+  $sql2 = "INSERT INTO admin VALUES ('$UserID', '$clearance');";
  if (!mysqli_query($con,$sql) || !mysqli_query($con,$sql2))
   {
   die('Error: ' . mysqli_error($con));
   }
-  echo "New Doctor Added";
+  echo "New Admin Added";
 }
 else {
   //else tell them to try again
@@ -46,5 +45,5 @@ else {
 
 mysqli_close($con);
 
-echo '<br> <a href="add-doctor.php">Back</a> <br>';
+echo '<br> <a href="add-admin.php">Back</a> <br>';
 ?>
