@@ -40,6 +40,8 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['Salary'] . "</td>";
   echo "<td>" . $row['ClearanceLevel'] . "</td>";
   
+  echo "<td><a href='editAdminInfo.php'>Update</a></td>";
+
   echo "</tr>";
   }
 echo "</table>";

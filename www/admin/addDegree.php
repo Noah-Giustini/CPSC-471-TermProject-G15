@@ -6,7 +6,7 @@ if(!isset($_SESSION['login'])){
 $DocID  = $_GET["ID"];
 echo '<form action="addDegreeQuery.php"  method="post">
 
-   Doctor ID: <input type = "hidden" name = "DoctorID" value =' . $DocID. '><br>
+   <input type = "hidden" name = "DoctorID" value =' . $DocID. '><br>
    Degree: <input type="text" name="Degree" required><br>
    <input type="submit" value="Submit">
 </form>

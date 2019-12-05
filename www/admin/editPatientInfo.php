@@ -6,7 +6,7 @@ if(!isset($_SESSION['login'])){
 $PatientID  = $_GET["ID"];
 echo '<form action="editPatientInfoQuery.php"  method="post">
 
-   PatientID: <input type = "hidden" name = "PatientID" value =' . $PatientID. '><br>
+   <input type = "hidden" name = "PatientID" value =' . $PatientID. '><br>
    First Name: <input type="text" name="FName" required><br>
    Last Name: <input type="text" name="LName" required><br>
    Health Care Num: <input type="text" name="HealthCareNum"required><br>

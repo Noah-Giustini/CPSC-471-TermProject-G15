@@ -6,7 +6,7 @@ if(!isset($_SESSION['login'])){
 $BedID  = $_GET["ID"];
 echo '<form action="edit-bed-wardQuery.php"  method="post">
 
-   BedID: <input type = "hidden" name = "BedID" value =' . $BedID. '><br>
+   <input type = "hidden" name = "BedID" value =' . $BedID. '><br>
    Ward ID: <input type="text" name="WardID" required><br>
    <input type="submit" value="Submit">
 </form>
