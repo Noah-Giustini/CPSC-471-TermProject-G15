@@ -13,15 +13,14 @@ if (mysqli_connect_errno($con))
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$UserID = $_SESSION['DoctorID'];
+$UserID = $_SESSION['UserID'];
 
 $prev_page = $_SESSION['Prev_Page'];
 
 
 
 //query
-$result = mysqli_query($con,"SELECT * FROM staff AS S, doctor AS D, doctor_is_in_ward AS DW
- WHERE S.STAFF_UserID_pk = $UserID AND D.DOCTOR_UserID_fk=S.STAFF_UserID_pk AND DW.DW_UserID_fk = D.DOCTOR_UserID_fk; ");
+$result = mysqli_query($con,"SELECT * FROM staff AS S, doctor AS D WHERE S.STAFF_UserID_pk = $UserID AND D.DOCTOR_UserID_fk=S.STAFF_UserID_pk;");
 
 echo "<table border='1'>
 <tr>
@@ -30,7 +29,6 @@ echo "<table border='1'>
 <th>First Name</th>
 <th>Last Name</th>
 <th>Salary</th>
-<th>Ward ID</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -41,8 +39,7 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['FName'] . "</td>";
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['Salary'] . "</td>";
-  echo "<td>" . $row['DW_WardID_fk'] . "</td>";
-  
+  echo "<td><a href='viewDoctorWards.php'>View Wards</a></td>";
   echo "<td><a href='editDoctorInfo.php'>Update</a></td>";
   
   echo "</tr>";
