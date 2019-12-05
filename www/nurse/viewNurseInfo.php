@@ -40,6 +40,7 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['Salary'] . "</td>";
   echo "<td>" . $row['NURSE_WardID_fk'] . "</td>";
+  echo "<td><a href=editNurseInfo.php? ><button>Edit Info</button></a></td>";
   echo "</tr>";
   }
 echo "</table>";
@@ -47,10 +48,6 @@ echo "</table>";
 echo "<br>
 <a href=nurse-main.php>Back</a>
 <br>";
-
-echo "<a href=editNurseInfo.php>Edit Info</a>";
-
-
 
 mysqli_close($con);
 ?>

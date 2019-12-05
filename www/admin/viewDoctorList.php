@@ -38,8 +38,8 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['LName'] . "</td>";
   echo "<td>" . $row['Salary'] . "</td>";
   echo "<td>" . $row['Specialty'] . "</td>";
-  echo "<td><a href='view-Doc-Wards.php?ID= " . $row['STAFF_UserID_pk'] . "'>View Wards</a></td>";
-  echo "<td><a href='viewDocDegrees.php?ID= " . $row['STAFF_UserID_pk'] . "'>View Degrees</a></td>";
+  echo "<td><a href='view-Doc-Wards.php?ID= " . $row['STAFF_UserID_pk'] . "'><button>View Wards</button></a></td>";
+  echo "<td><a href='viewDocDegrees.php?ID= " . $row['STAFF_UserID_pk'] . "'><button>View Degrees</button></a></td>";
   echo "</tr>";
   }
 echo "</table>";
