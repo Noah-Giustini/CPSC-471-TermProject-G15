@@ -9,5 +9,7 @@ if(!isset($_SESSION['login'])){
 <h1>Welcome, Doctor</h1>
 <a href="viewPatientList.php">View Patients</a><br>
 <a href="viewDoctorInfo.php">View Personal Information</a><br>
+<br>
+<a href='../logout.php'>Log out</a><br>
 </body>
 </html>

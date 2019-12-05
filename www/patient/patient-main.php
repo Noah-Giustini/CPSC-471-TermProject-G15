@@ -11,5 +11,7 @@ if(!isset($_SESSION['login'])){
 <a href="bookAppointment.php">Book Appointment</a><br>
 <a href="viewPatientInfo.php">View Personal Information</a><br>
 <a href="viewPatientPrescriptions.php">View Prescriptions</a><br>
+<br>
+<a href='../logout.php'>Log out</a><br>
 </body>
 </html>
