@@ -20,5 +20,12 @@ if(!isset($_SESSION['login'])){
 <a href="add-admin.php">Add Admin</a><br>
 <a href="viewDoctorList.php">View Doctors</a><br>
 <a href="viewNurseList.php">View Nurses</a><br>
+<br><br><br>
+<input type="button" name = "Logout" value="Logout" onClick = "window.location='../index.php';"/>
+<!-- FIX THE LOGOUT TO CLEAR THE SESSION, OTHERWISE THE USER IS NOT LOGGED OUT -->
+
 </body>
+
 </html>
+
+
