@@ -11,8 +11,8 @@ if(!isset($_SESSION['login'])){
    First Name: <input type="text" name="FName" ><br>
    Last Name: <input type="text" name="LName" ><br>
    Salary: <input type="text" name="Salary" ><br>
-   Is Specialist(0 for No, 1 for Yes): <input type="text" name="IsSpecialist" ><br>
-   Specialist: <input type="text" name="Specialist" ><br>
+   Is Specialist: <input type="checkbox" name="IsSpecialist" value = "1"><br>
+   Specialty: <input type="text" name="Specialist" ><br>
 
    <input type="submit" value="Submit">
 </form>

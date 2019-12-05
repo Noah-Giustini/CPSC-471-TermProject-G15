@@ -14,9 +14,6 @@ if (mysqli_connect_errno($con))
 }
 
 $PatientID = $_GET["ID"];
-//$UserID = $_SESSION['DoctorID'];
-$UserID = 882229;
-$prev_page = $_SESSION["Prev_Page"];
 
 
 
@@ -42,16 +39,12 @@ while($row = mysqli_fetch_array($result))
   echo "<td>" . $row['Dosage'] . "</td>";
   echo "<td>" . $row['Frequency'] . "</td>";
   echo "<td>" . $row['IsRefillable'] . "</td>";
-  echo "<td><a href='deletePrescription.php?MedID= " . $row["MEDICINE_MedicineID"] . "&DocID=".$UserID."&PatientID=".$PatientID." '>Delete</a></td>";
   echo "</tr>";
   }
 echo "</table>";
 
 echo "<br>
-<a href='addPrescription.php?DocID=".$UserID."&PatientID=".$PatientID."'>Add Prescription</a>
-<br>";
-echo "<br>
-<a href=$prev_page>Back</a>
+<a href=viewPatientList.php>Back</a>
 <br>";
 
 mysqli_close($con);

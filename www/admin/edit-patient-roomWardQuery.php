@@ -17,10 +17,10 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-  $sql = "UPDATE patient_is_in_ward AS PW, patient_is_in_room AS PR SET PW.PW_WardID_fk='$ward' SET PR.PR_RoomNum_fk='$room', WHERE PR.PR_UserID_fk = '$ID' AND PW.PW_UserID_fk = '$ID'";
-  
+  $sql = "UPDATE patient_is_in_ward SET PW_WardID_fk='$ward' WHERE PW_UserID_fk= '$ID'";
+  $sql2 =  "UPDATE patient_is_in_room SET PR_RoomNum_fk='$room' WHERE PR_UserID_fk = '$ID'";
  
- if (!mysqli_query($con,$sql))
+ if (!mysqli_query($con,$sql) || !mysqli_query($con, $sql2))
   {
   die('Error: ' . mysqli_error($con));
   }

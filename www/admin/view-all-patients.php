@@ -46,13 +46,13 @@ while($row = mysqli_fetch_array($result))
 echo "</table>";
 
 echo "<br>
-<a href=$prev_page>Back</a>
+<a href=admin-main.php>Back</a>
 <br>";
 
 
 mysqli_close($con);
 ?>
-
+<!-- 
 
 <html>
 	<head>
@@ -76,4 +76,4 @@ mysqli_close($con);
 
 	<body bgcolor = #FFFFFF>
 		<div align="center"></div>
-	</body>
+	</body> -->
