@@ -13,8 +13,8 @@ if (mysqli_connect_errno($con))
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-//$UserID = $_SESSION['DoctorID'];
-$UserID = 882229;
+$UserID = $_SESSION['DoctorID'];
+
 $prev_page = $_SESSION['Prev_Page'];
 
 
