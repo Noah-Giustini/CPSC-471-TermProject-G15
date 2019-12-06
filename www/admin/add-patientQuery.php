@@ -27,8 +27,8 @@ if (mysqli_connect_errno($con))
 if (mysqli_num_rows($testq) < 1){
   //if no try to insert
   $sql = "INSERT INTO patients VALUES ('$UserID','$password','$FName','$LName','$healthNum');";
-  $sql2 = "INSERT INTO patient_is_in_ward VALUES ('$UserID', 0);";
-  $sql3 = "INSERT INTO patient_is_in_room VALUES ('$UserID',0);";
+  $sql2 = "INSERT INTO patient_is_in_ward VALUES ('$UserID', 1);";
+  $sql3 = "INSERT INTO patient_is_in_room VALUES ('$UserID', 1337);";
  if (!mysqli_query($con,$sql) || !mysqli_query($con,$sql2) || !mysqli_query($con,$sql3))
   {
   die('Error: ' . mysqli_error($con));

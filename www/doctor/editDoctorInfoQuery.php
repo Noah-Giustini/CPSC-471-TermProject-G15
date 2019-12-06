@@ -9,7 +9,7 @@ $password = $_POST["Password"];
 $fname = $_POST["FName"];
 $lname = $_POST["LName"];
 //user var
-$UserID = $_SESSION['UserId'];
+$UserID = $_SESSION['UserID'];
 
 
 // Create connection

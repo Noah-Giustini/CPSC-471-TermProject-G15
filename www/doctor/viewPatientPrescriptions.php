@@ -15,8 +15,7 @@ if (mysqli_connect_errno($con))
 }
 
 $PatientID = $_GET["ID"];
-//$UserID = $_SESSION['DoctorID'];
-$UserID = 882229;
+$UserID = $_SESSION['DoctorID'];
 $prev_page = $_SESSION["Prev_Page"];
 
 

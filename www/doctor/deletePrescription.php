@@ -16,10 +16,8 @@ if (mysqli_connect_errno($con))
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-  $sql = 'DELETE FROM prescribed 
-  WHERE PPRESC_UserID_fk='.$PatientID.' AND DPRESC_UserID_fk='.$DoctorID.' AND MEDICINE_MedicineID = '.$MedicineID.';';
+  $sql = "DELETE FROM prescribed WHERE PPRESC_UserID_fk= $PatientID AND MEDICINE_MedicineID = $MedicineID;";
   
-  $testq = mysqli_query($con,$sql);  
     if (!mysqli_query($con,$sql))
     {
     die('Error: ' . mysqli_error($con));
